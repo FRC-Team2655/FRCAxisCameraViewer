@@ -1,0 +1,22 @@
+﻿<Window x:Class="FRCCameraViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FRCCameraViewer"
+        xmlns:p="clr-namespace:FRCCameraViewer.Properties" 
+        mc:Ignorable="d"
+        Title="Team 2655 Camera Viewer" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Source:"/>
+        <TextBox Grid.Row="1" x:Name="source"
+                 Text="{Binding Source={x:Static p:Settings.Default}, Path=Source, Mode=TwoWay}"/>
+        <Image Grid.Row="2"
+               x:Name="imageView"/>
+    </Grid>
+</Window>
